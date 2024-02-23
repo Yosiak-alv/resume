@@ -1,30 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderComponent from './components/HeaderComponent.vue';
+import ContactComponent from './components/ContactComponent.vue';
+import SummarySection from './components/sections/SummarySection.vue';
+import EducationSection from './components/sections/EducationSection.vue';
+import SkillsSection from './components/sections/SkillsSection.vue';
+import ExperienceSection from './components/sections/ExperienceSection.vue';
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main class="font-jost hyphens-manual">
+    <section
+      class="p-3 my-auto mx-auto max-w-3xl bg-gray-100 rounded-2xl border-4 border-gray-700 sm:p-9 md:p-16 lg:mt-6 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter"
+    >
+      <HeaderComponent/>
+      <!-- Column -------------------------------------------------------------------------------------------------->
+      <section
+        class="col-gap-8 print:col-count-2 print:h-letter-col-full col-fill-balance md:col-count-2 md:h-letter-col-full"
+      >
+        <ContactComponent/>
+        <SummarySection/>
+        <EducationSection/>
+        <SkillsSection/>
+        <ExperienceSection/>
+      </section>
+      
+    </section>
+  </main>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+
